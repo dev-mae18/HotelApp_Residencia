@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane
+        xmlns="http://javafx.com/javafx"
+        xmlns:fx="http://javafx.com/fxml"
+        stylesheets="@style.css"
+        fx:controller="pe.edu.upeu.proyecto_sql.controller.MainController"
+        prefHeight="600.0"
+        prefWidth="900.0">
+
+    <top>
+        <HBox alignment="CENTER_LEFT"
+              prefHeight="70.0"
+              styleClass="header"
+              BorderPane.alignment="CENTER">
+
+            <Label text="HOTEL" textFill="#666666">
+                <font>
+                    <Font name="System Bold" size="24.0"/>
+                </font>
+                <HBox.margin>
+                    <Insets left="20.0"/>
+                </HBox.margin>
+            </Label>
+
+            <Label text="Residencia UPeU" textFill="#666666">
+                <HBox.margin>
+                    <Insets left="10.0"/>
+                </HBox.margin>
+            </Label>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <Label text="Bienvenido, Usuario" textFill="#014074">
+                <font>
+                    <Font name="System Italic" size="14.0"/>
+                </font>
+                <HBox.margin>
+                    <Insets right="20.0"/>
+                </HBox.margin>
+            </Label>
+
+        </HBox>
+    </top>
+
+    <!-- Menu Lateral -->
+
+    <left>
+        <VBox prefHeight="200.0" styleClass="sidebar" BorderPane.alignment="CENTER">
+            <children>
+                <Button maxWidth="-Infinity" mnemonicParsing="false" onAction="#showHome"
+                styleClass="nav-button" text="Inicio"/>
+                <Button maxWidth="-Infinity" mnemonicParsing="false" onAction="#showClients"
+                styleClass="nav-button" text="Clientes"/>
+                <Button maxWidth="-Infinity" mnemonicParsing="false" onAction="#showHabitaciones"
+                styleClass="nav-button" text="Habitaciones"/>
+
+            </children>
+
+        </VBox>
+    </left>
+
+    <!-- Area de contenido -->
+    <center>
+        <VBox BorderPane.alignment="CENTER">
+            <StackPane fx:id="contenArea" VBox.vgrow="ALWAYS">
+                <children>
+                    <Label text="Seleccione una ipcion del menu" textFill="#999999"/>
+                </children>
+            </StackPane>
+            <HBox alignment="CENTER" prefHeight="20.0">
+                <children>
+                    <Label text="Copyright Xyron - 2026"
+                    textFill="#999999"/>
+                </children>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>

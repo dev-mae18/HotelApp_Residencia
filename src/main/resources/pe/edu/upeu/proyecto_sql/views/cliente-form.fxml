@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="10.0" style="-fx-background-color: white"
+      stylesheets="@style.css"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="pe.edu.upeu.proyecto_sql.controller.ClientFormController">
+
+    <padding>
+        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0"/>
+    </padding>
+
+    <children>
+
+        <!-- ===== Título ===== -->
+        <Label text="Datos del cliente" textFill="#014074">
+            <font>
+                <Font name="System Bold" size="16.0"/>
+            </font>
+        </Label>
+
+        <Separator prefWidth="200.0"/>
+
+        <!-- ===== Formulario ===== -->
+        <GridPane hgap="10.0" vgap="10.0">
+            <columnConstraints>
+                <ColumnConstraints minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints minWidth="10.0" prefWidth="220.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            </rowConstraints>
+
+            <children>
+                <!-- Fila 1: Nombre -->
+                <Label text="Nombre" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtNombre"
+                           GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <!-- Fila 2: Apellidos -->
+                <Label text="Apellidos" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtApellidos"
+                           GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                <!-- Fila 3: DNI -->
+                <Label text="DNI" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtDni"
+                           GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                <!-- Fila 4: Email -->
+                <Label text="Email" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtEmail"
+                           GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+                <!-- Fila 5: Género -->
+                <Label text="Género" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+                <ComboBox fx:id="cbxGenero"
+                          GridPane.rowIndex="5" GridPane.columnIndex="1"
+                          maxWidth="Infinity"/>
+            </children>
+        </GridPane>
+
+        <!-- ===== Botones ===== -->
+        <HBox alignment="CENTER_RIGHT" spacing="10.0">
+            <padding>
+                <Insets top="10.0"/>
+            </padding>
+            <children>
+                <Button mnemonicParsing="false" fx:id="btnCancelar" text="Cancelar" styleClass="button-action-delete" onAction="#handleCancel"/>
+                <Button mnemonicParsing="false" fx:id="btnGuardar"  text="Guardar" styleClass="button-action-edit" onAction="#handleSave"
+                        defaultButton="true"/>
+            </children>
+        </HBox>
+
+    </children>
+</VBox>
